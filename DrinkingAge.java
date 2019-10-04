@@ -2,12 +2,11 @@ import java.util.Scanner;
 public class DrinkingAge{
   public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
+    System.out.println("how old r u?");
     int age = scan.nextInt();
-    if (age>=17 && age<21)
-      System.out.println("can drive, no drinking");
-    else if (age>=21)
-      System.out.println("can drive, drink after");
+    if (age>=21)
+      System.out.println("waste urself");
     else
-      System.out.println("no driving nor drinking");
+      System.out.println("no drinking 4 u");
   }
 }
