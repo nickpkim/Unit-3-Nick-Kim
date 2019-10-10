@@ -27,6 +27,8 @@ public class WinPercentage{
       }
     }
     */
+    System.out.println("Win Percentage Calculator");
+    System.out.println();
     double totalGames = 0;
     boolean valid = false;
     System.out.println("# of games played");
