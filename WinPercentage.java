@@ -55,7 +55,6 @@ public class WinPercentage{
         valid = true;
       }
     }
-
     while ((totalGames<1) || (totalWins<0) || (totalWins>totalGames)){
       if (totalGames<1)
         System.out.println("# of games played must be greater than zero");
