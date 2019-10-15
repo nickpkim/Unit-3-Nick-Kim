@@ -32,8 +32,12 @@ public class Multiples{
       }
     }
     int limit = Integer.parseInt(limitInput);
-    for (int i = 1; i <= limit/multiple; i++){
-      System.out.println(multiple*i);
+    for (int i = 0; i < limit/multiple; i++){
+      if (i%5 == 0){
+        System.out.println();
+      } else{
+        System.out.print(multiple*i+"    ");
+      }
     }
   }
 }
