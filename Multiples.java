@@ -23,8 +23,8 @@ public class Multiples{
       System.out.println("with an upper limit of:");
       limitInput = scan.nextLine();
       for (int j=0; j<limitInput.length(); j++){
-        if (limitInput.codePointAt(j)<48 || limitInput.codePointAt(j)>57){
-          System.out.println("error: must be a non-decimal positive integer");
+        if (limitInput.codePointAt(j)<48 || limitInput.codePointAt(j)>57 || Integer.parseInt(limitInput)<multiple){
+          System.out.println("error: must be a non-decimal positive integer greater than the multiple");
           break;
         } else if(j == limitInput.length()-1){
           limitValid = true;
