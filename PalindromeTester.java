@@ -5,7 +5,6 @@ public class PalindromeTester{
     String input = scan.nextLine();
     input = input.toLowerCase();
     int length = input.length();
-    System.out.println(input+" "+length);
     for (int count=0; count<length; count++){
       if (input.codePointAt(count)<97 || input.codePointAt(count)>122){
         String toRemove = input.substring(count,count+1);
@@ -14,14 +13,24 @@ public class PalindromeTester{
         length = input.length();
       }
     }
-    System.out.println(input);
     boolean palindrome = false;
-    char left = input.charAt(0);
-    char right = input.charAt(length-1);
     int leftIndex = 0;
     int rightIndex = length-1;
-    while (leftIndex>rightIndex){
-      
+    while (leftIndex<rightIndex){
+      String left = input.charAt(leftIndex) + "";
+      String right = input.charAt(rightIndex) + "";
+      if (left.compareTo(right) != 0){
+        break;
+      } else{
+        palindrome = true;
+      }
+      leftIndex++;
+      rightIndex--;
+    }
+    if (palindrome = false){
+      System.out.println("Not a palindrome");
+    } else{
+      System.out.println("A palindrome!");
     }
     /*
     if (input.length()%2 != 0){

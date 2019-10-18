@@ -21,5 +21,6 @@ public class DigitScanner{
     System.out.println("Odds: "+countOdd);
     System.out.println("Evens: "+countEven);
     System.out.println("Zeros: "+countZero);
+    
   }
 }
