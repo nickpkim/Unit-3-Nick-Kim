@@ -35,9 +35,8 @@ public class Multiples{
     for (int i = 0; i < limit/multiple; i++){
       if (i%5 == 0){
         System.out.println();
-      } else{
-        System.out.print(multiple*i+"    ");
       }
+      System.out.print(multiple*i+"    ");
     }
   }
 }
