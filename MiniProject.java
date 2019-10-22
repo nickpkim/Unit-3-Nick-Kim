@@ -3,10 +3,14 @@ public class MiniProject{
   public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
     write("Welcome to Mega Star Printer X3000");
+    // the play == true is not necessary, but I needed to have some sort of
+    // while loop since I'm using the break method to end it
     boolean play = true;
-    boolean multiPrint = false;
-    int multiplePrint = 0;
     while (play == true){
+
+      // the following commented code is what I originally had to repeatedly
+      // ask the user if they would like to play before I decided to make the
+      // user type quit to end the program
       /*System.out.println("Would you like to print some thingies?");
       String answer = scan.nextLine().toLowerCase();
       int length = answer.length();
@@ -24,19 +28,33 @@ public class MiniProject{
         System.out.println("aight");
         break;
       }*/
+
+      // the following code is checking the user's input. it starts as a string
       boolean integerValid = false;
       String integerInput = "";
+
+      // while loop to have the user retry until they input a valid number
       while (integerValid == false){
         write("1 2 3 4 or 5. To quit, enter \"quit\"");
         integerInput = scan.nextLine();
+
+        // if the input string is equal to quit, it breaks the current while
+        // loop that checks number validity, but also falsifies the play
+        // boolean so the program knows to use the break method a second time
+        // (because the initial check is in a nested while loop)
         if (integerInput.toLowerCase().equals("quit")){
           play = false;
           break;
         }
+
+        // checks if each inidividual digit is 1-5. if not, breaks only the
+        // first while loop and the program restarts to prompt the user
         for (int i=0; i<integerInput.length(); i++){
           if (integerInput.codePointAt(i)<49 || integerInput.codePointAt(i)>53){
             write("error: must be an integer 1-5. To quit, enter \"quit\"");
             break;
+
+          // a valid number will declare true validity and run the print loop
           } else if(i == integerInput.length()-1){
             integerValid = true;
           }
@@ -45,6 +63,9 @@ public class MiniProject{
       if (play == false){
         break;
       }
+
+      // runs this loop for every digit the user inputted, checking each and
+      // printing the correct star pattern
       for (int i = 0; i < integerInput.length(); i++){
         if (integerInput.charAt(i) == '1'){
           print1();
@@ -60,9 +81,13 @@ public class MiniProject{
       }
       write("");
     }
+
+    // when the big boy loop is broken, it says bye
     write("");
     write("Goodbye! *bedoop*");
   }
+
+// star print functions
   static void print1(){
     for (int i = 9; i > 0; i--){
       System.out.println();
@@ -95,6 +120,9 @@ public class MiniProject{
       }
     }
   }
+
+  // I did each half of the 4th and 5th pattern so I wouldn't have to repeat
+  // unnecessary code in my method creations
   static void printIsoUp(){
     for (int i = 0; i < 5; i++){
       System.out.println();
