@@ -19,10 +19,11 @@ public class PalindromeTester{
     while (leftIndex<rightIndex){
       String left = input.charAt(leftIndex) + "";
       String right = input.charAt(rightIndex) + "";
-      if (left.compareTo(right) != 0){
-        break;
+      if (left.compareTo(right) == 0){
+        palindrom = true;
       } else{
-        palindrome = true;
+        palindrome = false;
+        break;
       }
       leftIndex++;
       rightIndex--;

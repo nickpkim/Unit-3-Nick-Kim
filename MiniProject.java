@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class MiniProject{
   public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
+    write("");
     write("Welcome to Mega Star Printer X3000");
     // the play == true is not necessary, but I needed to have some sort of
     // while loop since I'm using the break method to end it
